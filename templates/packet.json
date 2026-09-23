@@ -1,0 +1,13 @@
+{
+  "company": "{{COMPANY}}",
+  "title": "{{EXACT_ROLE_TITLE}}",
+  "url": "{{OFFICIAL_URL}}",
+  "requisition": null,
+  "checked_date": null,
+  "form_status": "not retrieved",
+  "ai_policy": {
+    "status": "unknown",
+    "source": null,
+    "checked_date": null
+  }
+}

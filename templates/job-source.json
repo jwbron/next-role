@@ -1,0 +1,13 @@
+{
+  "official_url": "{{OFFICIAL_URL}}",
+  "requisition": null,
+  "title": "{{EXACT_ROLE_TITLE}}",
+  "checked_date": null,
+  "availability": "not checked",
+  "source_type": null,
+  "retrieval_limits": [],
+  "location_eligibility": null,
+  "compensation": null,
+  "questions_source": null,
+  "ai_policy_source": null
+}

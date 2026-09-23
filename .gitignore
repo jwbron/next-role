@@ -1,0 +1,20 @@
+/private/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+*.pdf
+.render-*
+.DS_Store
+# AGENTS.md is public and maintained. Host-specific configuration stays local.
+/CLAUDE.md
+/.agents/
+/.claude/
+/.codex/
+/.cursor/
+/.opencode/
+/.pi/
+/.mcp.json
