@@ -66,6 +66,21 @@ class StarterTests(unittest.TestCase):
         self.assertIn("--source-only", onboarding)
         self.assertIn("## Contact and summary", onboarding)
 
+    def test_private_copy_uses_an_independent_destination_and_keeps_data_ignored(self):
+        guide = (ROOT / "guides/private-copy.md").read_text()
+        readme = (ROOT / "README.md").read_text()
+        instructions = (ROOT / "AGENTS.md").read_text()
+        self.assertIn("guides/private-copy.md", readme)
+        self.assertIn("guides/private-copy.md", instructions)
+        self.assertIn("forks of public repositories are public", guide)
+        self.assertIn("git remote remove origin", guide)
+        self.assertIn("--private --source=. --remote=origin", guide)
+        self.assertIn("isPrivate: true", guide)
+        self.assertIn("isFork: false", guide)
+        self.assertIn("No push has happened yet", guide)
+        self.assertIn("`private/` stays ignored", guide)
+        self.assertIn("/private/", (ROOT / ".gitignore").read_text().splitlines())
+
     def test_unexpected_files_are_rejected(self):
         (self.root / "resume.md").write_text("PRIVATE_SENTINEL")
         self.assertIn("Unexpected publication file: resume.md", check(self.root))

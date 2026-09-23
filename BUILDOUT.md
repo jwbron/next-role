@@ -28,12 +28,13 @@ Those patterns are retained. Actual profile content, application history, compen
 - Explicitly interactive preparation, not an automated application pipeline. Applications and recruiter messages remain manual, including when automated submission is requested.
 - Required manual review of the exact text and attachments before use. Prior approval, templates, examples, agent review, and mechanical checks don't replace candidate review. Substantive edits require renewed review.
 - A private session checkpoint for goals, active files, pending decisions, review state, and interrupted-work recovery. Older workspaces can add it without rerunning initialization.
+- Independent private-copy setup for github, with visibility checks before pushing and a clear warning that public forks cannot be made private independently. Personal workspace files remain ignored and need a separate private backup.
 - Safe initialization, a starter publication-file check, generic rendering, and synthetic regression coverage.
 - Fresh-agent conversation scenarios for onboarding, resuming with a changed goal, policy restrictions, unsaved practice, actual tool failures, automated-application requests, and reuse of prior draft approval.
 
 ## Validation performed
 
-- 45 automated tests pass locally on Python 3.14, using fictional temporary workspaces.
+- 46 automated tests pass locally on Python 3.14, using fictional temporary workspaces.
 - Coverage includes initialization, two candidate identities, PDF metadata and text, configurable page limits and A4 paper, Unicode font handling, overwrite protection, disclosure enforcement, stale attachments, answer limits, path boundaries, publication checks, and ZIP export exclusions.
 - Starter file inventory, canonical entrypoint inclusion, skill frontmatter, JSON, and local markdown file links pass their checks. Initialization saves the session template, preserves existing workspaces, and validation checks session links.
 - A fictional resume and cover letter were rendered and visually inspected. This doesn't validate every future layout or script.

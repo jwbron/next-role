@@ -8,9 +8,15 @@ Nothing in this repo should be blindly used, copied, or submitted. Templates and
 
 Start with an existing resume or no resume at all. The workflow covers career evidence and preferences, discovery, tailored applications, interview preparation and practice, debriefs, and negotiation. Local setup, PDF generation, and validation can be automated, application decisions and submissions cannot.
 
+## Create your private copy first
+
+If you'll use github for your search, [create an independent private copy](guides/private-copy.md) before adding personal information. Don't use the Fork button: a fork of this public repo stays public and cannot be made private independently. The guide includes agent-assisted setup, terminal commands, and repository creation through the github website when the github CLI isn't available.
+
+A local-only copy is also supported. In either setup, `private/` remains ignored by git, so repository pushes don't back up your personal search files. Keep a separate private backup.
+
 ## Start a conversation
 
-1. Download or clone this repository and open it in your preferred coding agent.
+1. Open your verified private copy, or a local-only copy, in your preferred coding agent.
 2. Say `Help me start a job search.` The agent reads [AGENTS.md](AGENTS.md), checks for existing work, and guides you through onboarding. If your host doesn't load `AGENTS.md` automatically, say `Read AGENTS.md and help me start a job search.`
 3. Answer a few questions at a time and review what the agent drafts. You can skip optional questions, change priorities, or pause and return later.
 

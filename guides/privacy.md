@@ -2,6 +2,8 @@
 
 The reusable starter and a populated search workspace have different audiences. Share the former, never assume permission to share the latter.
 
+For github hosting, [create an independent private copy](private-copy.md) before adding personal information. A fork of the public starter stays public and cannot be made private independently. Verify the destination's visibility and access list before use. Local-only use remains an option.
+
 ## Before onboarding
 
 Explain that an assistant may send text to its provider even when files are local and ignored by git. The candidate decides what to provide. Use summaries and redacted examples instead of confidential source exports. Don't request credentials or identity documents.
@@ -22,4 +24,4 @@ AI permission doesn't authorize uploading an employer's prompt, sharing it in a 
 
 ## Retention and backup
 
-Choose a private backup and retention policy. Ignored files won't be saved by ordinary git commits. Don't delete original resumes, submitted versions, or feedback without asking. References can be stored as a redacted summary with a source/date instead of the original confidential document.
+Choose a private backup and retention policy. Ignored files won't be saved by ordinary git commits, even when the repository itself is private. Both the starter's root ignore rule and the initializer's `private/.gitignore` keep search data out of ordinary pushes. Keep those protections during private-copy setup and use a separate private backup for the workspace. Don't delete original resumes, submitted versions, or feedback without asking. References can be stored as a redacted summary with a source/date instead of the original confidential document.
