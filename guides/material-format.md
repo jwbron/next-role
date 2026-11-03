@@ -6,7 +6,7 @@ The builders support a small markdown subset, not arbitrary markdown or a univer
 
 Use [the resume template](../templates/profile/resume.md). Content begins after the exact heading `## Contact and summary` and ends before `## Editing notes, not resume content`. The first three nonempty lines are name, contact line, and summary. They can contain any confirmed identity, no employer or degree is required.
 
-After that, use `## Section`, `### Entry`, single-line paragraphs, and `- Bullet`. Long lines wrap automatically. No tables, inline markdown emphasis, embedded images, or nested bullets are interpreted. Plain HTTPS URLs and email addresses become links. Private editing notes never enter the PDF. Keep claim-evidence notes in `profile/career.md`, not inside a public paragraph.
+After that, use `## Section`, `### Entry`, single-line paragraphs, and `- Bullet`. Long lines wrap automatically. No tables, inline markdown emphasis, embedded images, or nested bullets are interpreted. Plain HTTPS URLs and email addresses become links. Private editing notes never enter the PDF. A resume entry in the manifest can set `"public_variant": true` for a copy meant for a public page: it must match the base resume except for the contact line, and that line can't contain a phone number. Keep claim-evidence notes in `profile/career.md`, not inside a public paragraph.
 
 `profile/resume.md` is also the name/contact source for letters. Tailored resumes must preserve that identity. Change identity in the base and relevant variants together. There are no default employers, metrics, graduation dates, or academic credentials.
 

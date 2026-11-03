@@ -30,7 +30,7 @@ Those patterns are retained. Actual profile content, application history, compen
 - A private session checkpoint for goals, active files, pending decisions, review state, and interrupted-work recovery. Older workspaces can add it without rerunning initialization.
 - Independent private-copy setup for github, with visibility checks before pushing and a clear warning that public forks cannot be made private independently. Personal workspace files remain ignored and need a separate private backup.
 - Safe initialization, a starter publication-file check, generic rendering, and synthetic regression coverage.
-- Personal presence guidance and a `build-presence` skill: a minimal static site, a phone-free public resume, claim consistency with the resume, essays with confidentiality and voice checks, unlisted pages and their limits, where to link the site, LinkedIn profile text, and approval before any publish.
+- Personal presence guidance and a `build-presence` skill: a minimal static site, a phone-free public resume checked as a declared public variant, claim consistency with the resume, essays with confidentiality and voice checks, unlisted pages and their limits, where to link the site, LinkedIn profile text, and approval before any publish.
 - Private equity modeling in the negotiation guide: preferred price versus 409A, options versus RSUs, dilution, liquidation preferences, weighted exit scenarios with a no-liquidity case, liquidity timing, two-year cash versus four-year expected value, labeled estimates from an option count, recruiter questions, and leveling.
 - Discovery verification against public Ashby, Greenhouse, and Lever job-board endpoints, dated checks, location labels treated as claims, and posting text addressed to AI tools treated as untrusted data.
 - A project deep-dive presentation workflow with a numbers table that labels evidence types, speaker notes, a timer, a cut plan, a static backup, and confidentiality review.
@@ -39,7 +39,7 @@ Those patterns are retained. Actual profile content, application history, compen
 
 ## Validation performed
 
-- 50 automated tests pass locally on Python 3.14, using fictional temporary workspaces.
+- 51 automated tests pass locally on Python 3.14, using fictional temporary workspaces.
 - Coverage includes initialization, two candidate identities, PDF metadata and text, configurable page limits and A4 paper, Unicode font handling, overwrite protection, disclosure enforcement, stale attachments, answer limits, path boundaries, publication checks, and ZIP export exclusions.
 - Starter file inventory, canonical entrypoint inclusion, skill frontmatter, JSON, and local markdown file links pass their checks. Initialization saves the session template, preserves existing workspaces, and validation checks session links.
 - A fictional resume and cover letter were rendered and visually inspected. This doesn't validate every future layout or script.

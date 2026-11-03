@@ -13,7 +13,7 @@ Private planning notes. Keep drafts here until the candidate approves them. Noth
 
 - Site repository and host, and who controls them:
 - Custom domain and HTTPS status:
-- Resume copy offered on the site and its contact line:
+- Resume copy offered on the site, its contact line, and its `public_variant` manifest entry:
 - Pages: public, unlisted (`noindex`, unlinked), or not yet created:
 
 ## Claim comparison

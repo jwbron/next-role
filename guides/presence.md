@@ -26,7 +26,7 @@ Keep the design restrained. A readable type size, generous line height, enough c
 
 ## Resume on the site
 
-Offering a resume PDF saves a reviewer a step. A public copy shouldn't include a phone number, since anything on a public page can be scraped. The simplest route is a base resume whose contact line uses email and the site, which is enough for first contact. If the candidate wants a phone number on applications, keep the public copy as a separate reviewed file outside the manifest. The validator treats a different contact line as identity drift, so check the public copy's text against the base by hand before each publish.
+Offering a resume PDF saves a reviewer a step. A public copy shouldn't include a phone number, since anything on a public page can be scraped. Keep the phone number on the base resume used for applications, and register the public copy in the manifest with `"public_variant": true`. Validation then requires the public copy to match the base everywhere except the contact line, and fails if that line still contains a phone number. Rebuild the public copy whenever the base changes.
 
 ## Keep claims consistent
 

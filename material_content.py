@@ -52,6 +52,21 @@ def resume_identity(content):
     return lines[0], lines[1]
 
 
+PHONE = re.compile(r"\+?\d[\d\s().-]{6,}\d")
+
+
+def check_public_variant(content, base):
+    """A public copy may change only the contact line, and must not carry a phone number."""
+    lines = [line.strip() for line in content.splitlines() if line.strip()]
+    base_lines = [line.strip() for line in base.splitlines() if line.strip()]
+    if lines[0] != base_lines[0]:
+        raise ValueError("Resume identity differs from the base resume")
+    if PHONE.search(lines[1]):
+        raise ValueError("Public resume contact line contains a phone number")
+    if lines[2:] != base_lines[2:]:
+        raise ValueError("Public resume differs from the base resume beyond the contact line")
+
+
 def resume_text(content):
     return "\n".join(re.sub(r"^(?:### |## )", "", line) for line in content.splitlines())
 
@@ -104,6 +119,8 @@ def load_manifest(root):
                 raise ValueError("Duplicate manifest output")
             outputs.add(output)
             if section == "resumes":
+                if "public_variant" in entry and type(entry["public_variant"]) is not bool:
+                    raise ValueError("Invalid public_variant")
                 if entry["key"] in keys:
                     raise ValueError("Duplicate resume key")
                 keys.add(entry["key"])

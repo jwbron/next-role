@@ -7,7 +7,7 @@ import re
 from urllib.parse import unquote, urlsplit
 
 from material_content import (check_answer, check_text, letter_content, load_manifest,
-                              local, normalize, resume_content, resume_identity,
+                              check_public_variant, local, normalize, resume_content, resume_identity,
                               resume_text, settings)
 
 ROOT = Path(__file__).resolve().parent
@@ -101,7 +101,9 @@ def audit(root, *, source_only=False):
     def resume(item):
         content = resume_content(local(root, item["source"]).read_text(encoding="utf-8"))
         base = resume_content(local(root, "profile/resume.md").read_text(encoding="utf-8"))
-        if resume_identity(content) != resume_identity(base):
+        if item.get("public_variant"):
+            check_public_variant(content, base)
+        elif resume_identity(content) != resume_identity(base):
             raise ValueError("Resume identity differs from the base resume")
         if source_only:
             return {"pdf_checked": False}

@@ -237,6 +237,35 @@ class WorkspaceTests(unittest.TestCase):
         self.save_manifest(manifest)
         self.assertIn("identity", self.failures()[0]["error"])
 
+    def test_public_variant_may_change_only_the_contact_line(self):
+        with_phone = FIXTURE.replace("alex@example.com |", "alex@example.com | 555-010-0199 |")
+        self.source.write_text(with_phone, encoding="utf-8")
+        self.render()
+        folder = self.root / "public"
+        folder.mkdir()
+        source = folder / "resume.md"
+
+        def check(text, public_variant=True):
+            source.write_text(text, encoding="utf-8")
+            render_resume(self.root, source, folder / "resume.pdf", self.config, overwrite=True)
+            manifest = load_manifest(self.root)
+            manifest["resumes"] = [entry for entry in manifest["resumes"] if entry["key"] != "public"]
+            manifest["resumes"].append({"key": "public", "source": "public/resume.md",
+                                        "pdf": "public/resume.pdf", "public_variant": public_variant})
+            self.save_manifest(manifest)
+            return [failure["error"] for failure in self.failures()]
+
+        self.assertEqual(check(FIXTURE), [])
+        self.assertIn("phone number", check(with_phone)[0])
+        self.assertIn("beyond the contact line", check(FIXTURE.replace("reliable internal tools", "other tools"))[0])
+        self.assertIn("identity", check(FIXTURE.replace("Alex Example", "Another Person"))[0])
+        self.assertIn("identity", check(FIXTURE, public_variant=False)[0])
+        manifest = load_manifest(self.root)
+        manifest["resumes"][-1]["public_variant"] = "yes"
+        self.save_manifest(manifest)
+        with self.assertRaisesRegex(ValueError, "public_variant"):
+            load_manifest(self.root)
+
     def test_answer_mirrors_and_limits(self):
         (self.root / "answers.md").write_text("## Why this role?\n\nA clear answer.\n\n## Private notes\n\nNot submission copy.\n")
         (self.root / "answer.txt").write_text("A clear answer.\n")

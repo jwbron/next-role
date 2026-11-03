@@ -12,6 +12,8 @@ Many employers publish their job board through an ATS with a public, read-only e
 | Lever | `https://api.lever.co/v0/postings/<slug>?mode=json` | HTTP 404 with a JSON error |
 | Ashby | `https://api.ashbyhq.com/posting-api/job-board/<slug>` | HTTP 404 |
 
+The slug is usually the board name in the apply link's path. For Ashby it can be case-sensitive and include spaces, which need URL encoding, so copy it exactly rather than guessing a lowercase version. Some endpoints reject requests without a browser-like user agent and return 403. That's an access problem, not a missing board, so retry with a normal user agent before concluding anything.
+
 A 404 means the slug is wrong or the board moved, not that the role is closed. Go back to the careers page, find the real apply link, and retry with that slug. A valid board that returns an empty list, or a list without the role, is evidence the role isn't currently posted there. Record it as not listed on that date, not as permanently closed. Some employers use other systems or their own careers pages, so the official careers page remains the fallback source.
 
 When the role is found, record the exact title, requisition or posting ID, URL, location fields, and the check date in the role's [source record](../templates/job-source.json) or the search run. Recheck before the candidate spends real time on an application, since postings close and change without notice.
