@@ -78,7 +78,7 @@ The blank workspace intentionally fails source validation until its placeholders
 
 ## Development and release
 
-[BUILDOUT.md](BUILDOUT.md) records the inventory, validation, and remaining limits. [Agent scenarios](tests/agent-scenarios.md) define behavioral checks for a fresh agent session. Automated Python tests verify tooling and document contracts, not whether a model follows every instruction.
+[LIMITS.md](LIMITS.md) records what the checks cover and the remaining limits. [Agent scenarios](tests/agent-scenarios.md) define behavioral checks for a fresh agent session. Automated Python tests verify tooling and document contracts, not whether a model follows every instruction.
 
 The reusable source, skills, templates, and guides are licensed under the [MIT License](LICENSE). Keep candidate data in private workspaces, outside the publication file set. The license doesn't remove the need to review imported material for rights, confidentiality, and employer restrictions.
 
