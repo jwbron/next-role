@@ -34,6 +34,10 @@ The commands stop if a step fails. Inspect the actual state before retrying, don
 
 Don't remove ignore rules, force-add personal files, or add them to `starter-files.json` as part of this setup. The export ZIP remains a public-starter export and excludes the private workspace. A private destination doesn't turn ignored files into tracked files, encrypt them, or remove assistant-provider and collaborator access risks. See [privacy guidance](privacy.md).
 
+## When more than one agent session works here
+
+You may run several agent sessions in the same copy, for example one tailoring an application while another prepares an interview. Each session should check `git status` and pull before editing, read a file before overwriting it and re-read it if it changed, say so before switching branches, stage explicit paths rather than everything, and leave other sessions' uncommitted changes alone. If a change appears that no one explains, ask before reverting it. The full rules are in [AGENTS.md](../AGENTS.md).
+
 ## If you already made a public fork
 
 Don't add personal data to it or assume that deleting the fork will erase pushed history. Start a fresh independent private copy from the public starter using the steps above. Keep any existing local personal data separate until the new destination is verified, and don't push the old fork's history into the new copy if it contains private material.

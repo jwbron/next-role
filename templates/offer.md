@@ -15,6 +15,10 @@ Private notes. Mode: early preparation, verbal discussion, written offer, or hyp
 | Equity issuer, instrument, units | | | |
 | Vesting, cliff, refresh | | | |
 | Option strike, exercise window, costs | | | |
+| 409A value and date, latest preferred price | | | |
+| Fully diluted shares or grant percentage | | | |
+| Liquidation preference stack, if disclosed | | | |
+| Early exercise, tender history, refresh policy | | | |
 | Sale eligibility and restrictions | | | |
 | Benefits, start date, contingencies | | | |
 | Decision deadline and timezone | | | |
@@ -36,6 +40,20 @@ Private notes. Mode: early preparation, verbal discussion, written offer, or hyp
 | One-time payments | | | |
 | Equity units / nominal value / scenarios | | | |
 | Work and non-pay terms | | | |
+
+## Equity scenarios
+
+Label each input as company-confirmed or estimated, with its source and date. Probabilities are the candidate's judgment and add to 100%.
+
+| Scenario and timing | Common value per share after dilution and preferences | Candidate's value (spread for options) | Probability | Weighted value |
+| --- | --- | --- | --- | --- |
+| No liquidity within the horizon | 0 | 0 | | |
+
+- Grant at preferred price, and at 409A or strike:
+- Dilution assumed:
+- Two-year cash view (paid cash only, equity only with a confirmed sale path):
+- Four-year view including probability-weighted equity:
+- Estimates still to replace with company numbers:
 
 Check that one-time payments aren't counted again in recurring cash, a guaranteed portion isn't added twice, and a multi-year grant isn't counted as an annual grant. Use the actual vesting schedule. Private equity isn't cash. Unknown amounts remain unknown.
 

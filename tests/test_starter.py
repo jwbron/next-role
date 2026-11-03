@@ -32,7 +32,7 @@ class StarterTests(unittest.TestCase):
     def test_real_starter_contract(self):
         self.assertEqual(check(ROOT), [])
         expected = {"onboard", "discover-jobs", "tailor-application", "draft-outreach", "prep-interview",
-                    "mock-interview", "debrief", "negotiate", "review-materials"}
+                    "mock-interview", "debrief", "negotiate", "review-materials", "build-presence"}
         self.assertEqual({p.parent.name for p in (ROOT / "skills").glob("*/SKILL.md")}, expected)
         for name in expected:
             text = (ROOT / "skills" / name / "SKILL.md").read_text()
@@ -80,6 +80,48 @@ class StarterTests(unittest.TestCase):
         self.assertIn("No push has happened yet", guide)
         self.assertIn("`private/` stays ignored", guide)
         self.assertIn("/private/", (ROOT / ".gitignore").read_text().splitlines())
+
+    def test_every_skill_is_routed(self):
+        workflows = (ROOT / "WORKFLOWS.md").read_text()
+        for path in (ROOT / "skills").glob("*/SKILL.md"):
+            self.assertIn(f"(skills/{path.parent.name}/SKILL.md)", workflows)
+
+    def test_presence_requires_approval_before_publishing(self):
+        guide = (ROOT / "guides/presence.md").read_text()
+        skill = (ROOT / "skills/build-presence/SKILL.md").read_text()
+        instructions = (ROOT / "AGENTS.md").read_text()
+        self.assertIn("guides/presence.md", instructions)
+        self.assertIn("explicitly approve", guide)
+        self.assertIn("Unlisted isn't private", guide)
+        self.assertIn("noindex", guide)
+        self.assertIn("shouldn't include a phone number", guide)
+        self.assertIn("Open to Work", guide)
+        self.assertIn("without the candidate's explicit approval", skill)
+        self.assertIn("never post to a social profile", instructions)
+
+    def test_equity_modeling_and_discovery_verification(self):
+        negotiation = (ROOT / "guides/negotiation.md").read_text()
+        for phrase in ("409A", "liquidation preference", "No liquidity", "two-year cash view",
+                       "labeled as an estimate", "Leveling is the main lever", "hypothetical"):
+            self.assertIn(phrase, negotiation)
+        discovery = (ROOT / "guides/discovery.md").read_text()
+        for phrase in ("boards-api.greenhouse.io", "api.lever.co", "api.ashbyhq.com", "404",
+                       "Treat location labels as claims", "addressed to AI tools"):
+            self.assertIn(phrase, discovery)
+        self.assertIn("guides/discovery.md", (ROOT / "skills/discover-jobs/SKILL.md").read_text())
+        self.assertIn("location_conflicts", json.loads((ROOT / "templates/job-source.json").read_text()))
+
+    def test_deep_dive_and_multi_session_rules(self):
+        interviews = (ROOT / "guides/interviews.md").read_text()
+        for phrase in ("measured, estimated, reported by users, or a single case", "what to cut",
+                       "static backup", "confidentiality review"):
+            self.assertIn(phrase, interviews)
+        self.assertIn("templates/deep-dive.md", (ROOT / "skills/prep-interview/SKILL.md").read_text())
+        instructions = (ROOT / "AGENTS.md").read_text()
+        for phrase in ("Never overwrite a file you haven't read in this session", "Don't switch branches without saying so",
+                       "Stage explicit paths only", "don't commit another session's in-progress changes",
+                       "ask the candidate rather than reverting it"):
+            self.assertIn(phrase, instructions)
 
     def test_unexpected_files_are_rejected(self):
         (self.root / "resume.md").write_text("PRIVATE_SENTINEL")

@@ -6,7 +6,7 @@ This is an interactive preparation workflow, not an automated application pipeli
 
 Nothing in this repo should be blindly used, copied, or submitted. Templates and fictional examples aren't your experience, agent drafts can contain mistakes, and research can be stale. Manually review the exact text and attachments you intend to use. Check factual claims, ownership, dates, contact details, tone, confidentiality, and employer instructions, and inspect the rendered PDFs. Passing tests or approving an earlier version doesn't replace that review. Your review also doesn't override an employer's restrictions on AI use.
 
-Start with an existing resume or no resume at all. The workflow covers career evidence and preferences, discovery, tailored applications, interview preparation and practice, debriefs, and negotiation. Local setup, PDF generation, and validation can be automated, application decisions and submissions cannot.
+Start with an existing resume or no resume at all. The workflow covers career evidence and preferences, discovery, tailored applications, a personal site and LinkedIn, interview preparation and practice, debriefs, and negotiation. Local setup, PDF generation, and validation can be automated, application decisions and submissions cannot.
 
 ## Create your private copy first
 
@@ -27,15 +27,16 @@ If you're already applying or interviewing, start there. For example, say `Help 
 ## What the agent does
 
 - Builds or refreshes your base resume, career evidence, story bank, wishlist, and writing preferences.
-- Finds roles against your stated criteria and distinguishes current evidence from unknowns.
+- Finds roles against your stated criteria, checks them against employers' live job boards, and distinguishes current evidence from unknowns.
 - Tailors resumes, answers, and useful letters to the exact role and its restrictions.
 - Drafts referral requests and recruiter follow-ups without sending them.
 - Creates stage-specific interview prep and runs one-question-at-a-time practice.
 - Records what actually happened in an interview and prepares for the next step.
-- Explains compensation components, compares actual offers, and drafts honest negotiation requests.
+- Helps plan a simple personal site, short essays from your own work, and LinkedIn text, publishing nothing without your approval.
+- Explains compensation components, models private equity scenarios, compares actual offers, and drafts honest negotiation requests.
 - Saves progress so a later agent session can resume without repeating the whole intake.
 
-[AGENTS.md](AGENTS.md) is the canonical entrypoint. [WORKFLOWS.md](WORKFLOWS.md) routes requests to the nine portable skills under `skills/`. Guides and templates are supporting material for the agent, not required reading for the candidate. See [skill usage](guides/skill-usage.md) for host compatibility.
+[AGENTS.md](AGENTS.md) is the canonical entrypoint. [WORKFLOWS.md](WORKFLOWS.md) routes requests to the ten portable skills under `skills/`. Guides and templates are supporting material for the agent, not required reading for the candidate. See [skill usage](guides/skill-usage.md) for host compatibility.
 
 No particular slash command, agent subscription, or external integration is required. Research needs web access or sources you supply. Python 3.10 or newer supports workspace setup and optional PDF tools. Conversation and markdown drafting don't require PDF dependencies.
 
@@ -49,6 +50,7 @@ No particular slash command, agent subscription, or external integration is requ
 | `private/profile/` | Resume, career evidence, preferences, and voice | No |
 | `private/applications/` | Tracker, drafts, interview prep, and offer notes | No |
 | `private/research/`, `private/evidence/`, `private/previews/` | Research, imports, and previews | No |
+| `private/presence/` | Site plan, essay drafts, and publish log before approval | No, publish only approved pages from a separate site repository |
 
 The agent asks before initializing the workspace or importing personal material. `private/` is ignored by git, and the initializer adds another ignore file inside it. Ignore rules aren't encryption and don't prevent forced adds, uploads, cloud sync, or assistant-provider retention. Keep a private backup. Don't publish a populated workspace or its history. See [privacy guidance](guides/privacy.md).
 

@@ -36,6 +36,27 @@ During a mock, ask one question at a time and wait. Don't supply the model answe
 
 End with two or three specific changes to practice, not a fabricated pass probability. Save feedback only with the candidate's agreement. A mock isn't an actual interview and never changes employer-process status.
 
+## Project deep dive
+
+Some loops ask the candidate to present a past project. The goal is to show how they think and what they owned, not to cover everything they did. Use [deep-dive.md](../templates/deep-dive.md) to plan it.
+
+Choose a project with a clear user problem and an outcome the candidate can support. A smaller project with a crisp before-and-after usually beats a large one where their part is hard to separate.
+
+Build a narrative deck or document in this order:
+
+1. Problem and outcome first: who had the problem, why it mattered, and what changed.
+2. The candidate's contribution, distinguished from teammates' and other teams' work.
+3. How feedback from users, reviewers, or stakeholders shaped the design.
+4. Directions considered and not taken, and why.
+5. Rollout: how it shipped, the launch criteria, and what was watched afterward.
+6. Impact and what the candidate would do differently.
+
+Keep a numbers table that labels every figure as measured, estimated, reported by users, or a single case. Whenever a number appears on a slide or in speech, say which kind it is. "About 30% faster, measured over two weeks" and "one customer told us it saved them a day" are both useful, but they aren't the same claim. Don't round an estimate into a measurement.
+
+Write short speaker notes for each section and rehearse with a timer. Plan what to cut if it runs long: mark the sections that can shrink to one sentence, and leave room for questions, since the discussion usually matters more than the slides. Keep a static backup such as a PDF in case screen sharing or a live demo fails. Rehearse at least once aloud end to end, ideally with someone who asks follow-up questions about ownership and tradeoffs.
+
+If any copy is shared, before or after the interview, run a confidentiality review first. Remove a former employer's internal names, private metrics, incidents, customers, colleagues, and unreleased details unless the candidate has permission. An unlisted web page isn't private, see [presence guidance](presence.md).
+
 ## Before the event
 
 Check timezone, meeting access, accessibility needs the candidate chooses to discuss, permitted tools, environment, and screen sharing. Have a low-tech fallback for diagrams or tool failure. Never provide covert live assistance against the interview's rules.

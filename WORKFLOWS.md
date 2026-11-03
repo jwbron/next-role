@@ -14,6 +14,7 @@ Follow [AGENTS.md](AGENTS.md) first. Choose the workflow from the candidate's re
 | Practice or rehearse | [mock-interview](skills/mock-interview/SKILL.md) | Agreed format, time budget, feedback timing | Propose a suitable practice track and ask one question at a time |
 | Describe an interview that happened | [debrief](skills/debrief/SKILL.md) | Candidate account of a completed event | Confirm which event happened before updating status |
 | Discuss pay, negotiate, or choose an offer | [negotiate](skills/negotiate/SKILL.md) | Early discussion versus actual offer, candidate priorities | Prepare questions when terms are unknown, don't fabricate a package |
+| Build or update a personal site, write essays from past work, prepare an unlisted deep-dive page, or refresh LinkedIn | [build-presence](skills/build-presence/SKILL.md) | What the candidate wants public and their confirmed evidence | Ask about goals, existing site and host, and time, publish nothing without explicit approval |
 | Check existing materials | [review-materials](skills/review-materials/SKILL.md) | Scope and current files | Ask which packet to inspect, don't rewrite by default |
 | Continue or resume without a new task | Read `session.md` and canonical files first | Last saved goal and pending decision | Summarize the checkpoint and ask what changed, use onboarding if no prior work exists |
 | Apply automatically, submit a batch, or schedule an application campaign | No submission workflow exists | No additional credentials or permissions are needed | Decline automated submission and offer role research, reviewed drafts, or a manual-submission checklist |
@@ -42,6 +43,8 @@ A passing validator only checks specified mechanical properties. It isn't eviden
 | Prep to mock | Selected practice track, learning goal, available time | Agree on feedback timing and whether to save notes |
 | Interview to debrief | Prior prep and confirmed scheduling | Candidate confirms the event occurred and supplies their account |
 | Debrief to next-round prep | Direct feedback, new facts, candidate reactions | Confirm the next stage rather than inferring it |
+| Onboarding to presence | Confirmed base resume, evidence IDs, voice | Candidate decides what becomes public, claims match the resume |
+| Presence to interview prep | Approved essays or deep-dive pages, confidentiality decisions | Confirm what may be shared with this employer |
 | Any stage to negotiation | Actual compensation statements and candidate criteria | Distinguish preparation from a real offer and genuine alternatives |
 
 A blank salary target, no degree, career gap, missing metric, or skipped sensitive field doesn't block every workflow. Record unknowns that matter to the next decision and defer the rest.
@@ -60,6 +63,7 @@ When the checkpoint is absent in an older workspace, create it from [the blank s
 | Rendering or validation failure | Preserve the previous output, report the failure, diagnose it before retrying |
 | Unknown or restrictive AI policy | Clarify the actual stage rules, request candidate-authored text when required, don't evade restrictions |
 | Interrupted session | Read the checkpoint and affected files, determine what actually saved, resume without repeating confirmed questions |
+| Another session changed files | Re-read before editing, don't overwrite or revert unexplained changes, ask the candidate |
 | Candidate declines storage | Keep the declined content out of every file, including the checkpoint |
 
 Don't infer completed interviews from old dates, fresh availability from old research, approval from an existing file, or submission from a generated PDF.
